@@ -76,11 +76,15 @@
 	
 <br><br>
 <!-- Text input-->
-
-
-
 <?php
-	$sql = "select * from product ";
+	$kw = $_POST['kw'] ;
+	$pt = $_GET['pt'] ;
+	if (isset($_GET['pt'])) {
+		$s = "and (p_type = '$pt')"; 
+	} else {
+		$s = "";	
+	}
+	$sql = "select * from product where ( p_name like '%$kw%' or color like '%$kw%' ) $s ";
 	$rs = mysqli_query($conn, $sql) ;
 	$i = 0;
 	while ($data = mysqli_fetch_array($rs, MYSQLI_BOTH)) {
