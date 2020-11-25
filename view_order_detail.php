@@ -134,7 +134,7 @@ WHERE orders_detail.oid = '".$_GET['a']."'  ";
 ?>
   <tr>
     <td><?=$i;?></td>
-    <td><img src="images/<?=$data['p_picture'];?>" width="25%"> <br>
+    <td><img src="images/<?=$data['p_picture'];?>" width="25%"> <br>@
 	<?=$data['od_product'];?>  <?=$data['p_name'];?></td>
     <td><?=$data['item'];?></td>
     <td><?=number_format($data['p_price'],0);?></td>
