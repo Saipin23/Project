@@ -105,7 +105,7 @@ if(empty($_SESSION['mname'])) {
 		if ( ($i % 4 ) == 0){
 			echo "</div>";	
 		}
-	} // end while
+	 // end while
 
 	mysqli_close($conn);
 ?>
