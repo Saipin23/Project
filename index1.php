@@ -76,9 +76,11 @@
 	
 <br><br>
 <!-- Text input-->
+
+
+
 <?php
-	
-	$sql = "select * from product where ";
+	$sql = "select * from product ";
 	$rs = mysqli_query($conn, $sql) ;
 	$i = 0;
 	while ($data = mysqli_fetch_array($rs, MYSQLI_BOTH)) {
@@ -87,7 +89,6 @@
 			echo "<div class='row' align='center' style='width:100%;'>";
 		}
 ?>
-
 <div class="container col-md-3 align-center">
     <div class="thumbnail">
 		<div class="portfolio-item">
