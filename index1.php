@@ -76,26 +76,9 @@
 	
 <br><br>
 <!-- Text input-->
-<center>
-	<form class="form-inline" action="index1.php" method="post">
-<fieldset>
-  <div class="form-inline">Search : 
-	  <input type="text" name="kw" class="form-control" size="50" placeholder="ค้นหา">
-	  <button id="singlebutton" name="singlebutton" class="btn btn-success">ค้นหา</button>
-	</div>
-		</fieldset></form>
-</center>
-	<br>
-
 <?php
-	$kw = $_POST['kw'] ;
-	$pt = $_GET['pt'] ;
-	if (isset($_GET['pt'])) {
-		$s = "and (p_type = '$pt')"; 
-	} else {
-		$s = "";	
-	}
-	$sql = "select * from product where ( p_name like '%$kw%' or color like '%$kw%' ) $s ";
+	
+	$sql = "select * from product where ";
 	$rs = mysqli_query($conn, $sql) ;
 	$i = 0;
 	while ($data = mysqli_fetch_array($rs, MYSQLI_BOTH)) {
