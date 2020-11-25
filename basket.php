@@ -90,10 +90,10 @@ if(empty($_SESSION['mname'])) {
 <?php
 	@session_start();
 	include("connectdb.php");
-	$sql = "select * from product where p_id='".$_GET['id']."' ";
+	@$sql = "select * from product where p_id='".$_GET['id']."' ";
 	$rs = mysqli_query($conn, $sql) ;
 	$data = mysqli_fetch_array($rs, MYSQLI_BOTH);
-	$id = $_GET['id'] ;
+	@$id = $_GET['id'] ;
 	
 	if(isset($_GET['id'])) {
 		$_SESSION['sid'][$id] = $data['p_id'];
