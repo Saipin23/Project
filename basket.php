@@ -101,7 +101,7 @@ if(empty($_SESSION['mname'])) {
 		$_SESSION['sprice'][$id] = $data['p_price'];
 		$_SESSION['sdetail'][$id] = $data['p_detail'];
 		$_SESSION['spicture'][$id] = $data['p_picture'];
-		$_SESSION['sitem'][$id]++;
+		@$_SESSION['sitem'][$id]++;
 	}
 ?>
 <!doctype html>
@@ -138,9 +138,9 @@ if(empty($_SESSION['mname'])) {
 <?php
 if(!empty($_SESSION['sid'])) {
 	foreach($_SESSION['sid'] as $pid) {
-		$i++;
+		@$i++;
 		$sum[$pid] = $_SESSION['sprice'][$pid] * $_SESSION['sitem'][$pid] ;
-		$total += $sum[$pid] ;
+		@$total += $sum[$pid] ;
 		$_SESSION['mname'];
 
 ?>
