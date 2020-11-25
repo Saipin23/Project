@@ -151,12 +151,12 @@ WHERE orders_detail.oid = '".$_GET['a']."'  ";
 	while ($data = mysqli_fetch_array($rs, MYSQLI_BOTH)) {
 		$i++;
 		$sum = $data['p_price'] * $data['item'] ;
-		$total += $sum;
+		@$total += $sum;
 ?>
   <tr>
     <td><?=$i;?></td>
     <td><img src="images/<?=$data['p_picture'];?>" width="25%"> <br>
-	<?=$data['od_product'];?>  <?=$data['p_name'];?></td>
+	<?=@$data['od_product'];?>  <?=$data['p_name'];?></td>
     <td><?=$data['item'];?></td>
     <td><?=number_format($data['p_price'],0);?></td>
     <td><?=number_format($sum,0);?></td>

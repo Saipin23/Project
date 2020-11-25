@@ -139,7 +139,7 @@ if(empty($_SESSION['mname'])) {
   
   <?php
 	include("connectdb.php");
-	$sql = "select  *  from  `orders` where member_id='{$_SESSION['mid']}'";  // order by oid  desc
+	@$sql = "select  *  from  `orders` where member_id='{$_SESSION['mid']}'";  // order by oid  desc
 	//var_dump($sql);
 	$rs = mysqli_query($conn, $sql) ;
 	 while ($data = mysqli_fetch_array($rs, MYSQLI_BOTH)) {
