@@ -78,7 +78,7 @@
 <!-- Text input-->
 <?php
 	@$kw = $_POST['kw'] ;
-	$pt = $_GET['pt'] ;
+	@$pt = $_GET['pt'] ;
 	if (isset($_GET['pt'])) {
 		$s = "and (p_type = '$pt')"; 
 	} else {
